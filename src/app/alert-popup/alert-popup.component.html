@@ -1,0 +1,8 @@
+<ngb-alert #staticAlert type="success" [dismissible]="false">
+    <strong>Well done!</strong> You successfully read this important alert message.
+  </ngb-alert>
+  <ngb-alert #selfClosingAlert type="info" *ngIf="successMessage">
+    {{ successMessage }}
+  </ngb-alert>
+  <button type="button" class="btn btn-success" (click)="changeSuccessMessage()">Change Message</button>
+  

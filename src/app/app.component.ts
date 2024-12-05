@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet ,RouterLink,RouterLinkActive,RouterModule } from '@angular/router';
+import { NgbdAlertSelfclosing } from './alert-popup/alert-popup.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet,RouterLink,RouterLinkActive,RouterModule,NgbdAlertSelfclosing],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

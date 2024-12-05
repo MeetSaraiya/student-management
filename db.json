@@ -1,0 +1,40 @@
+{
+  "studentList": [
+    {
+      "id": "5",
+      "firstName": "Charlie",
+      "lastName": "Williams",
+      "status": true
+    },
+    {
+      "id": "9",
+      "firstName": "George",
+      "lastName": "Lopez",
+      "status": true
+    },
+    {
+      "id": "b096",
+      "firstName": "asadd",
+      "lastName": "sagjd",
+      "status": false
+    },
+    {
+      "id": "1ffe",
+      "firstName": "g",
+      "lastName": "aaa",
+      "status": false
+    },
+    {
+      "id": "9a7f",
+      "firstName": "new ",
+      "lastName": "student",
+      "status": true
+    },
+    {
+      "id": "0ba1",
+      "firstName": "ahha",
+      "lastName": "gG",
+      "status": true
+    }
+  ]
+}

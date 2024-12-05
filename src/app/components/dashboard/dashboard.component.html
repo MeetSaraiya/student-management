@@ -1,0 +1,85 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">No.</th>
+        <th scope="col">Student ID</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+        <th scope="col">Status</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+        @for (st of studentList; track $index) {
+      <tr>
+        <th scope="row">{{$index+1}}</th>
+        <td>{{st.id}}</td>
+        <td>{{st.firstName}}</td>
+        <td>{{st.lastName}}</td>
+        <td>{{st.status}}</td>
+        <td>
+            <button type="button" class="btn btn-warning" (click)="editStudent(st)">Edit</button>
+            <button type="button" class="btn btn-danger" (click)="deleteStudent(st.id!)">Delete</button>
+        </td>
+      </tr>
+    }
+    </tbody>
+  </table>
+
+
+  <!-- --------------------------- -->
+
+  <ul ngbNav #nav="ngbNav" class="nav-tabs">
+    <li ngbNavItem>
+      <button ngbNavLink="/add" [routerLink]="['/add']" routerLinkActive="router-link-active" >go to add student</button>
+      <ng-template ngbNavContent>First content</ng-template>
+    </li>
+    <li ngbNavItem>
+     
+    </li>
+  </ul>
+  <div [ngbNavOutlet]="nav"></div>
+  <router-outlet></router-outlet>
+
+
+<h3 class="mt-16 text-center">update form</h3>
+  <form class="container-fluid">
+    <!-- <ngbd-alert-selfclosing></ngbd-alert-selfclosing> -->
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">First Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        name="firstName"
+        [(ngModel)]="studentObj.firstName"
+      />
+      <!-- <span>name field can't be emptied</span>
+      <span>length of name field has to be more than 3</span> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Last Name</label>
+      <input
+        type="text"
+        #fname="ngModel"
+        class="form-control"
+        id="lastName"
+        name="lastName"
+        [(ngModel)]="studentObj.lastName"
+      />
+    </div>
+    <div class="mb-3 form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="status"
+        name="status"
+        [(ngModel)]="studentObj.status"
+      />
+      <label class="form-check-label" for="exampleCheck1"
+        >Check me out , if you are avaible for work</label
+      >
+    </div>
+    <button type="button" class="btn btn-primary" (click)="editStudent(studentObj)">Edit Student</button>
+  </form>
+  
