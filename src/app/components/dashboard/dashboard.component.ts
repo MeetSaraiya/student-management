@@ -1,15 +1,19 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, NgModule, OnInit } from '@angular/core';
 import { AllservicesService } from '../../services/allservices.service';
 import { Student } from '../../model/student';
 import { error } from 'console';
-import {NgbAlert, NgbNav, NgbNavOutlet} from '@ng-bootstrap/ng-bootstrap';
+import {NgbAlert, NgbModal, NgbNav, NgbNavOutlet} from '@ng-bootstrap/ng-bootstrap';
 import { RouterLink,RouterOutlet } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import {MatButtonModule} from '@angular/material/button';
+import { ModalComponentComponent } from '../../modal-component/modal-component.component';
+
+
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [NgbAlert,NgbNavOutlet,NgbNav,RouterLink,RouterOutlet,FormsModule],
+  imports: [NgbAlert, NgbNavOutlet, NgbNav, RouterLink, RouterOutlet, FormsModule, MatButtonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
@@ -17,7 +21,7 @@ export class DashboardComponent implements OnInit {
   studentList : Student[] = [];
   studentObj : Student = new Student();
 
-    constructor(private service:AllservicesService){
+    constructor(private service:AllservicesService,public modalService:NgbModal){
 
     }
 
@@ -46,6 +50,18 @@ export class DashboardComponent implements OnInit {
 
       },error=>{
         alert("failed to delete student")
+      })
+    }
+
+
+    openModal(st:Student){
+      console.log("HI",st);
+      const modalRef = this.modalService.open(ModalComponentComponent);
+      modalRef.componentInstance.st=st;
+      modalRef.result.then((result)=>{
+        if(result){
+          this.studentObj=st;
+        }
       })
     }
 }

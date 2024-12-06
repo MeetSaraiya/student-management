@@ -1,3 +1,4 @@
+
 <table class="table">
     <thead>
       <tr>
@@ -18,7 +19,7 @@
         <td>{{st.lastName}}</td>
         <td>{{st.status}}</td>
         <td>
-            <button type="button" class="btn btn-warning" (click)="editStudent(st)">Edit</button>
+            <button mat-raised-button class="btn btn-warning example-button-row" (click)="openModal(st)" (dblclick)="editStudent(st)">Edit</button>
             <button type="button" class="btn btn-danger" (click)="deleteStudent(st.id!)">Delete</button>
         </td>
       </tr>
