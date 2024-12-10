@@ -6,6 +6,7 @@ import { Student } from '../model/student';
   providedIn: 'root'
 })
 export class AllservicesService {
+  //created by meet saraiya
     http = inject(HttpClient);
     urlStr = "http://localhost:3000/studentList";
     constructor() { }

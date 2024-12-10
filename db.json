@@ -2,7 +2,7 @@
   "studentList": [
     {
       "id": "5",
-      "firstName": "Charlieeeeeeeeeeeeeeeeeee",
+      "firstName": "Charlieeeee",
       "lastName": "Williams",
       "status": true
     },
@@ -14,9 +14,9 @@
     },
     {
       "id": "b096",
-      "firstName": "asadd",
+      "firstName": "asad",
       "lastName": "sagjd",
-      "status": false
+      "status": true
     },
     {
       "id": "1ffe",
